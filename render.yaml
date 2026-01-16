@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: no-guardrail-ai-proxy
+  name: no-guardrail-ai-dashboard
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python proxy.py
+    buildCommand: pip install -r requirements.txt && playwright install chromium
+    startCommand: python server.py
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
